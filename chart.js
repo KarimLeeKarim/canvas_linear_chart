@@ -1,4 +1,4 @@
-function drawCahrt(data) {
+function drawChart(data) {
   let element = document.getElementById("canvas");
   let canvas = element.getContext("2d");
 
@@ -32,7 +32,7 @@ function drawCahrt(data) {
   canvas.lineTo(GRAPH_RIGHT, GRAPH_BOTTOM);
   canvas.stroke();
 
-  // calculate largest piece of data
+  //CALCULATE LARGEST PIECE OF DATA
   let largest = 0;
   for (let i = 0; i < arrayLen; i++) {
     if (data[i] > largest) {
@@ -42,7 +42,7 @@ function drawCahrt(data) {
 
   canvas.fillStyle = "black";
 
-  //line setting
+  //LINE SETTING
   canvas.beginPath();
   canvas.lineJoin = "round";
   canvas.strokeStyle = "black";
@@ -74,14 +74,19 @@ function drawCahrt(data) {
     canvas.fill();
   }
   canvas.stroke();
-}
+};
+
 let element = document.getElementById("canvas");
 let canvas = element.getContext("2d");
-element.addEventListener("click", canvasClicked, false);
+
 
 let data = [7, 68, 20, 30, 60, 43, 55, 12, 34];
-drawCahrt(data);
+
+drawChart(data);
+
+element.addEventListener("click", canvasClicked);
+
 function canvasClicked() {
   canvas.clearRect(0, 0, 500, 400);
-  drawCahrt(data);
+  drawChart(data);
 }
