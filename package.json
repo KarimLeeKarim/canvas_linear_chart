@@ -15,8 +15,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KarimLeeKarim/canvas_linear_chart/issues"
-  },
-  "dependencies": {
-    "gh-pages": "^3.2.3"
   }
 }
