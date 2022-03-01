@@ -2,11 +2,11 @@ function drawChart(data) {
   let element = document.getElementById("canvas");
   let canvas = element.getContext("2d");
 
-  let GRAPH_TOP = 25;
-  let GRAPH_BOTTOM = 370;
-  let GRAPH_LEFT = 25;
-  let GRAPH_RIGHT = 475;
-  let GRAPH_HEIGHT = 350;
+  const GRAPH_TOP = 25;
+  const GRAPH_BOTTOM = 370;
+  const GRAPH_LEFT = 25;
+  const GRAPH_RIGHT = 475;
+  const GRAPH_HEIGHT = 350;
 
   // RANDOM VALUES FOR GRAPH
   function shuffleArray(array) {
@@ -18,7 +18,7 @@ function drawChart(data) {
 
   shuffleArray(data);
 
-  let arrayLen = data.length;
+  let dotsCount = data.length;
 
   canvas.fillStyle = "lightgray";
   canvas.fillRect(0, 0, 500, 400);
@@ -34,7 +34,7 @@ function drawChart(data) {
 
   //CALCULATE LARGEST PIECE OF DATA
   let largest = 0;
-  for (let i = 0; i < arrayLen; i++) {
+  for (let i = 0; i < dotsCount; i++) {
     if (data[i] > largest) {
       largest = data[i];
     }
@@ -54,8 +54,8 @@ function drawChart(data) {
 
   canvas.fillText("0", GRAPH_LEFT, GRAPH_BOTTOM + 12);
 
-  for (let i = 1; i < arrayLen; i++) {
-    let X = (GRAPH_RIGHT / arrayLen) * i + GRAPH_LEFT;
+  for (let i = 1; i < dotsCount; i++) {
+    let X = (GRAPH_RIGHT / dotsCount) * i + GRAPH_LEFT;
     let Y = GRAPH_HEIGHT - (data[i] / largest) * GRAPH_HEIGHT + GRAPH_TOP;
 
     canvas.fillStyle = "black";
